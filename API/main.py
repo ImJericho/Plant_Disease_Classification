@@ -6,7 +6,7 @@ import tensorflow as tf
 import os
 
 # class names
-MODEL_NUMBER = max([int(i) for i in os.listdir("2")])
+# MODEL_NUMBER = max([int(i) for i in os.listdir("2")])
 CLASS_NAMES = ['Tomato_Bacterial_spot', 
                'Tomato_Early_blight', 
                'Tomato_healthy', 
