@@ -1,6 +1,6 @@
-#cv2
+cv2
 streamlit
 numpy
-`Pillow`
+Pillow
 tensorflow
 os
