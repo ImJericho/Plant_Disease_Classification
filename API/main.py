@@ -6,10 +6,21 @@ import tensorflow as tf
 import os
 
 # class names
-MODEL_NUMBER = max([int(i) for i in os.listdir("../Saved_Models")])
-CLASS_NAMES = []
-for i in os.listdir("../Dataset"):
-    CLASS_NAMES.append(i)
+MODEL_NUMBER = max([int(i) for i in os.listdir("2")])
+CLASS_NAMES = ['Tomato_Bacterial_spot', 
+               'Tomato_Early_blight', 
+               'Tomato_healthy', 
+               'Tomato_Late_blight', 
+               'Tomato_Leaf_Mold', 
+               'Tomato_Septoria_leaf_spot', 
+               'Tomato_Spider_mites_Two_spotted_spider_mite', 
+               'Tomato__Target_Spot', 
+               'Tomato__Tomato_mosaic_virus', 
+               'Tomato__Tomato_YellowLeaf__Curl_Virus']
+
+# for i in os.listdir("../Dataset"):
+#     CLASS_NAMES.append(i)
+
 
 # GUI
 st.title("TOMATO LEAF DISEASE DETECTION APP")
@@ -18,7 +29,8 @@ st.write("*..............................This Project was owned by* Vivek Patida
 
 
 #model building
-MODEL = tf.keras.models.load_model("../Saved_Models/"+str(MODEL_NUMBER))
+# MODEL = tf.keras.models.load_model("../Saved_Models/"+str(MODEL_NUMBER))
+MODEL = tf.keras.models.load_model("2")
 
 
 img_file_buffer = st.camera_input("Take The Picture Of The Leaf")
