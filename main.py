@@ -17,7 +17,7 @@ def predict_class(im):
     #model building
     MODEL = tf.keras.models.load_model("Saved_Models/"+str(MODEL_NUMBER))
 
-    im = np.array(img)
+    img = np.array(im)
     image = np.expand_dims(img, 0)
     predictions = MODEL.predict(image)
     prediction = np.argmax(predictions)
