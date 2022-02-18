@@ -6,7 +6,7 @@ import tensorflow as tf
 import os
 
 
-def predict_class(img):
+def predict_class(im):
     
     # class names
     MODEL_NUMBER = max([int(i) for i in os.listdir("Saved_Models")])
@@ -17,9 +17,9 @@ def predict_class(img):
     #model building
     MODEL = tf.keras.models.load_model("Saved_Models/"+str(MODEL_NUMBER))
 
-    img = np.array(img)
-    img = np.expand_dims(img, 0)
-    predictions = MODEL.predict(img)
+    img = np.array(im)
+    image = np.expand_dims(img, 0)
+    predictions = MODEL.predict(image)
     prediction = np.argmax(predictions)
     confidence = np.max(predictions)
     pred = CLASS_NAMES[prediction]
